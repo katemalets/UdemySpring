@@ -9,10 +9,14 @@
 
     <bean id="fortuneService"
           class="spring.course.java.HappyFortuneService">
-
     </bean>
     <bean id="myCoach"
           class="spring.course.java.DanceCoach">
           <constructor-arg ref="fortuneService"/>
     </bean>
+    <bean id="cricketCoach"
+          class="spring.course.java.CricketCoach">
+        <property name="fortuneService" ref="fortuneService"/>
+    </bean>
+
 </beans>

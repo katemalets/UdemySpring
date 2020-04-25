@@ -17,6 +17,8 @@
     <bean id="cricketCoach"
           class="spring.course.java.CricketCoach">
         <property name="fortuneService" ref="fortuneService"/>
+        <property name="email" value="katya@malets"/>
+        <property name="team" value="zyrko"/>
     </bean>
 
 </beans>

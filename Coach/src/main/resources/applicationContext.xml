@@ -11,7 +11,9 @@
           class="spring.course.java.HappyFortuneService">
     </bean>
     <bean id="myCoach"
-          class="spring.course.java.DanceCoach">
+          class="spring.course.java.DanceCoach"
+          init-method="doInitialization"
+          destroy-method="doDestruction">
           <constructor-arg ref="fortuneService"/>
     </bean>
     <bean id="cricketCoach"

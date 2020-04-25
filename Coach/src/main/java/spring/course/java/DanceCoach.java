@@ -17,4 +17,12 @@ public class DanceCoach implements Coach{
     public String getFortune() {
         return "I am dancing right now\n" + fortuneService.getFortune();
     }
+
+    public void doInitialization(){
+        System.out.println("Initiiiiiiing");
+    }
+
+    public void doDestruction(){
+        System.out.println("Destrooooooying");
+    }
 }

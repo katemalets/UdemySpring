@@ -1,6 +1,5 @@
 package spring.course.java;
 
-public interface Coach {
-    String getDailyWorkOut();
+public interface FortuneService {
     String getFortune();
 }

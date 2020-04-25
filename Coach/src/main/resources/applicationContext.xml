@@ -7,6 +7,12 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <bean id="fortuneService"
+          class="spring.course.java.HappyFortuneService">
+
+    </bean>
     <bean id="myCoach"
-          class="spring.course.java.BasketballCoach"> </bean>
+          class="spring.course.java.DanceCoach">
+          <constructor-arg ref="fortuneService"/>
+    </bean>
 </beans>

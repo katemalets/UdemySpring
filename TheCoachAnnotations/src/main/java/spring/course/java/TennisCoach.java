@@ -5,8 +5,11 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 @Component
-@Scope("prototype")
+@Scope("singleton")
 public class TennisCoach implements Coach {
 
     @Autowired
@@ -38,5 +41,15 @@ public class TennisCoach implements Coach {
     @Override
     public String getDailyFortune(){
         return fortuneService.getFortune();
+    }
+
+    @PostConstruct
+    public void doInit(){
+        System.out.println("Files are downloaded");
+    }
+
+    @PreDestroy
+    public void doDestroy(){
+        System.out.println("Files are deleted");
     }
 }

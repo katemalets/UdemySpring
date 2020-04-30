@@ -11,7 +11,8 @@
 
 <p>Hiii Spring MVC</p>
 <br>
-<p>Name: <%= request.getParameter("studentName") %></p>
+<p><hr></p>
 My name is : ${param.studentName}
+<h1>Message : ${message}<h1>
 </body>
 </html>

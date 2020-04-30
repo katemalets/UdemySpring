@@ -18,10 +18,17 @@
             <!--        </form:select> -->
                     <br>
 
-           Country(select from linkedhashmap) :
+           Country :
                         <form:select path="country">
                             <form:options items="${student.countryOptions}"/>
                         </form:select>
+                        <br>
+           Favourite language :
+                         Java <form:radiobutton path="favouriteLanguage" value="Java"/>
+                         C++ <form:radiobutton path="favouriteLanguage" value="C"/>
+                         JS <form:radiobutton path="favouriteLanguage" value="JS"/>
+                         CSS <form:radiobutton path="favouriteLanguage" value="CSS"/>
+                         Python <form:radiobutton path="favouriteLanguage" value="Python"/>
                         <br>
           <input type="submit" value="Submit"/>
       </form:form>

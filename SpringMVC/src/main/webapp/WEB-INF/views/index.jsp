@@ -1,6 +1,6 @@
 <html>
 <body>
 <h2>Hello new Page</h2>
-<a href="showForm">Click here</a>
+<a href="hello/showForm">Click here</a>
 </body>
 </html>

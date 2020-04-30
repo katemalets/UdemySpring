@@ -1,5 +1,7 @@
 package spring.course.java.models;
 
+import java.util.LinkedHashMap;
+
 public class Student {
 
     private String firstName;
@@ -8,8 +10,16 @@ public class Student {
 
     private String country;
 
+    private LinkedHashMap<String,String> countryOptions;
+
     public Student(){
 
+        countryOptions = new LinkedHashMap<>();
+        countryOptions.put("BR","Brazil");
+        countryOptions.put("BEL","Belarus");
+        countryOptions.put("EN", "England");
+        countryOptions.put("US", "United States");
+        countryOptions.put("RUS", "Russia");
     }
 
     public String getFirstName() {
@@ -34,5 +44,9 @@ public class Student {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public LinkedHashMap<String, String> getCountryOptions() {
+        return countryOptions;
     }
 }

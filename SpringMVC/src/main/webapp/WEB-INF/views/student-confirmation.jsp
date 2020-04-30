@@ -2,10 +2,12 @@
 <html lang="en">
 <html>
   <head>
-   <meta charset="UTF-8">
-    <title>Student Confirmation</title>
+        <meta charset="UTF-8">
+        <title>Student Confirmation</title>
   </head>
-  <body>
-        Student name is : ${student.firstName} ${student.lastName}
-  </body>
+      <body>
+            Name : ${student.firstName} ${student.lastName}
+            <br>
+            Country : ${student.country}
+      </body>
 </html>

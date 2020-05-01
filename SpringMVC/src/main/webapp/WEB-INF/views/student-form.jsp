@@ -10,12 +10,12 @@
           <br>
           Last name : <form:input path="lastName"/>
           <br>
-          <!-- Country(select from jsp) : <form:select path="country"> -->
-           <!--             <form:option value="Brazil" label="Brazil"/> -->
-           <!--             <form:option value="Belarus" label="Belarus"/> -->
-            <!--            <form:option value="Russia" label="Russia"/> -->
-             <!--           <form:option value="France" label="France"/> -->
-            <!--        </form:select> -->
+            <!-- Country(select from jsp) : <form:select path="country">     -->
+            <!--             <form:option value="Brazil" label="Brazil"/>    -->
+            <!--             <form:option value="Belarus" label="Belarus"/>  -->
+            <!--            <form:option value="Russia" label="Russia"/>     -->
+            <!--           <form:option value="France" label="France"/>      -->
+            <!--        </form:select>                                       -->
                     <br>
 
            Country :
@@ -30,6 +30,11 @@
                          CSS <form:radiobutton path="favouriteLanguage" value="CSS"/>
                          Python <form:radiobutton path="favouriteLanguage" value="Python"/>
                         <br>
+           Operating systems :
+                         Linux <form:checkbox path="operatingSystems" value="Linux"/>
+                         Mac OS <form:checkbox path="operatingSystems" value="Mac OS"/>
+                         MS Windows <form:checkbox path="operatingSystems" value="MS Window"/>
+                <br>
           <input type="submit" value="Submit"/>
       </form:form>
   </body>

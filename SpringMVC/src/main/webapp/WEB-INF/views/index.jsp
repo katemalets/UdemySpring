@@ -4,5 +4,7 @@
             <a href="hello/showForm">Hello World</a>
             <br>
             <a href="student/showForm">Student</a>
+            <br>
+            <a href="customer/showForm">Customer</a>
     </body>
 </html>

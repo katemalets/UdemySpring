@@ -1,7 +1,5 @@
 package spring.course.java.models;
 
-import org.springframework.lang.NonNull;
-
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -9,7 +7,7 @@ public class Customer {
 
     private String firstName;
 
-    @NotNull()
+    @NotNull(message = "you have to fill it in, guy!")
     @Size(min = 1, message = "is required")
     private String lastName;
 

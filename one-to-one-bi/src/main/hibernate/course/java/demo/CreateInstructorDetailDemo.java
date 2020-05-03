@@ -16,11 +16,13 @@ public class CreateInstructorDetailDemo {
                 .buildSessionFactory();
         Session session = sessionFactory.getCurrentSession();
         try {
-            int id = 5;
+            int id = 4;
             session.beginTransaction();
             InstructorDetail instructorDetail = session.get(InstructorDetail.class, id);
             System.out.println("Our instructorDetail : " + instructorDetail);
             System.out.println("Our instructor : " + instructorDetail.getInstructor());
+            instructorDetail.getInstructor().setInstructorDetail(null);
+            session.delete(instructorDetail);
             session.getTransaction().commit();
         } catch (Exception exc){
             exc.printStackTrace();

@@ -1,4 +1,4 @@
-package hibernate.course.java.demo.entity;
+package hibernate.course.java;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

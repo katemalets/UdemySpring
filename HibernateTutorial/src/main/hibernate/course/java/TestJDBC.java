@@ -6,11 +6,6 @@ import java.sql.DriverManager;
 public class TestJDBC {
     public static void main(String[] args) {
         String jdbcURL = "jdbc:mysql://127.0.0.1:3306/?user=hbstudent"+
-//                "?verifyServerCertificate=false"+
-//                "&useSSL=false"+
-//                "&requireSSL=false"+
-//                "&useLegacyDatetimeCode=false"+
-//                "&amp"+
                 "&serverTimezone=UTC";
         String user = "hbstudent";
         String pass = "hbstudent";

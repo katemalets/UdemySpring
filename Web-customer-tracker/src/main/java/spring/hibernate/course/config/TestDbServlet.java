@@ -1,4 +1,4 @@
-package spring.hibernate.course;
+package spring.hibernate.course.config;
 
 import java.io.IOException;
 import java.io.PrintWriter;

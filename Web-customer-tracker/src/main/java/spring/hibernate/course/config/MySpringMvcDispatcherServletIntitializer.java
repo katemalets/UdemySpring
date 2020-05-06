@@ -1,5 +1,6 @@
 package spring.hibernate.course.config;
 
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class MySpringMvcDispatcherServletIntitializer extends AbstractAnnotationConfigDispatcherServletInitializer {

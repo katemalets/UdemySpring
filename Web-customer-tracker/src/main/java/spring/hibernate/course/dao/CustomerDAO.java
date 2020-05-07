@@ -14,24 +14,20 @@ import java.util.List;
 @Repository
 public class CustomerDAO implements ICustomerDAO {
 
-    SessionFactory sessionFactory = new Configuration()
-            .configure("hibernate.cfg.xml")
-            .addAnnotatedClass(Customer.class)
-            .buildSessionFactory();
-    Session session = sessionFactory.getCurrentSession();
+//    SessionFactory sessionFactory = new Configuration()
+//            .configure("hibernate.cfg.xml")
+//            .addAnnotatedClass(Customer.class)
+//            .buildSessionFactory();
+//    Session session = sessionFactory.getCurrentSession();
 
-//    @Autowired
-//    private SessionFactory sessionFactory;
+    @Autowired
+    private SessionFactory sessionFactory;
 
     @Override
-    @Transactional
     public List<Customer> getCustomers() {
         Session session = sessionFactory.getCurrentSession();
-        session.beginTransaction();
         Query<Customer> query = session.createQuery(
                 "from Customer",Customer.class);
-        List<Customer> customers = query.getResultList();
-        session.getTransaction();
-        return customers;
+        return query.getResultList();
     }
 }

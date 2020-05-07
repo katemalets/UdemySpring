@@ -3,9 +3,12 @@ package spring.hibernate.course.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import spring.hibernate.course.dao.ICustomerDAO;
 import spring.hibernate.course.entities.Customer;
+import spring.hibernate.course.service.ICustomerService;
 
 import java.util.List;
 
@@ -14,11 +17,11 @@ import java.util.List;
 public class CustomerController {
 
     @Autowired
-    private ICustomerDAO iCustomerDAO;
+    private ICustomerService iCustomerService;
 
-    @RequestMapping("/list")
+    @GetMapping("/list")
     public String showCustomers(Model model){
-        List<Customer> customers = iCustomerDAO.getCustomers();
+        List<Customer> customers = iCustomerService.getCustomers();
         model.addAttribute("customers", customers);
         return "list-customers";
     }

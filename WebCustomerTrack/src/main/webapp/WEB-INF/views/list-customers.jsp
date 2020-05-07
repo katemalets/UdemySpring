@@ -64,17 +64,25 @@
             <h2 align="center">CRM - Customer Relationship Manager</h2>
         </div>
      </div>
+     <br>
+     <input type="button" value="Add Customer"
+     onclick="window.location.href='showFormForAdd'; return false " class="add-button"/>
         <table>
             <tr>
                 <th>First Name </th>
                 <th>Last Name </th>
                 <th>Email </th>
+
             </tr>
                 <c:forEach var="customer" items="${customers}">
+                    <c:url var="updateLink" value="/customer/showFormForUpdate">
+                        <c:param name="customerId" value="${customer.id}"/>
+                    </c:url>
                 <tr>
                     <td>${customer.firstName}</td>
                     <td>${customer.lastName}</td>
                     <td>${customer.email}</td>
+                    <td><a href="${updateLink}">Update</a></td>
                 </tr>
                 </c:forEach>
         </table>

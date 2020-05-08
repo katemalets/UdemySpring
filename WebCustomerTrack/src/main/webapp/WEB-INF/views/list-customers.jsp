@@ -75,6 +75,7 @@
 
             </tr>
                 <c:forEach var="customer" items="${customers}">
+
                     <c:url var="updateLink" value="/customer/showFormForUpdate">
                         <c:param name="customerId" value="${customer.id}"/>
                     </c:url>

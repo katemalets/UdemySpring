@@ -13,32 +13,30 @@ import spring.hibernate.course.entity.Customer;
 @Repository
 public class CustomerDAO implements ICustomerDAO {
 
-	// need to inject the session factory
 	@Autowired
 	private SessionFactory sessionFactory;
 			
 	@Override
 	public List<Customer> getCustomers() {
-		
-		// get the current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
-				
-		// create a query  ... sort by last name
 		Query<Customer> theQuery = 
 				currentSession.createQuery("from Customer order by lastName",
 											Customer.class);
-		
-		// execute query and get result list
 		List<Customer> customers = theQuery.getResultList();
-				
-		// return the results		
 		return customers;
 	}
 
 	@Override
 	public void saveCustomer(Customer customer) {
 		Session session = sessionFactory.getCurrentSession();
-		session.save(customer);
+		session.saveOrUpdate(customer);
+	}
+
+	@Override
+	public Customer getCustomer(int id) {
+		Session session = sessionFactory.getCurrentSession();
+		Customer customer = session.get(Customer.class, id);
+		return customer;
 	}
 }
 

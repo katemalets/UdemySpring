@@ -14,24 +14,30 @@ public class CustomerService implements ICustomerService {
 
 	// need to inject customer dao
 	@Autowired
-	private ICustomerDAO customerDAO;
+	private ICustomerDAO iCustomerDAO;
 	
 	@Override
 	@Transactional
 	public List<Customer> getCustomers() {
-		return customerDAO.getCustomers();
+		return iCustomerDAO.getCustomers();
 	}
 
 	@Override
 	@Transactional
 	public void saveCustomer(Customer customer) {
-		customerDAO.saveCustomer(customer);
+		iCustomerDAO.saveCustomer(customer);
 	}
 
 	@Override
 	@Transactional
 	public Customer getCustomer(int id) {
-		return customerDAO.getCustomer(id);
+		return iCustomerDAO.getCustomer(id);
+	}
+
+	@Override
+	@Transactional
+	public void deleteCostumer(int id) {
+		iCustomerDAO.deleteCustomer(id);
 	}
 
 }

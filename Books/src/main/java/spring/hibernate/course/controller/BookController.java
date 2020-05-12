@@ -3,10 +3,12 @@ package spring.hibernate.course.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import spring.hibernate.course.entity.Book;
 import spring.hibernate.course.service.IBookService;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -31,9 +33,14 @@ public class BookController {
     }
 
     @PostMapping("/saveBook")
-    public String saveBook(@ModelAttribute(name = "book") Book book) {
-        iBookService.saveBook(book);
-        return "redirect:/book/list";
+    public String saveBook(@Valid @ModelAttribute(name = "book") Book book,
+                           BindingResult bindingResult) {
+        if(bindingResult.hasErrors()){
+            return "book-form";
+        } else {
+            iBookService.saveBook(book);
+            return "redirect:/book/list";
+        }
     }
 
     @GetMapping("/showFormForUpdate")

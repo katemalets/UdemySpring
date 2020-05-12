@@ -80,7 +80,7 @@
             margin-bottom: 15px;
             background: #cccccc;
         }
-
+        .errors{color:red}
     </style>
 </head>
 <body>
@@ -99,11 +99,13 @@
                 <tbody>
                     <tr>
                         <td><label>Name : </label></td>
-                        <td><form:input path="name"/></td>
+                        <td><form:input path="name"/>
+                            <form:errors path="name" cssClass="errors"/></td>
                     </tr>
                     <tr>
                         <td><label>Author : </label></td>
-                        <td><form:input path="author"/></td>
+                        <td><form:input path="author"/>
+                            <form:errors path="author" cssClass="errors"/></td>
                     </tr>
                     <tr>
                         <td><label>Year : </label></td>
@@ -111,7 +113,8 @@
                     </tr>
                     <tr>
                         <td><label>Mark : </label></td>
-                        <td><form:input path="mark"/></td>
+                        <td><form:input path="mark"/>
+                        <form:errors path="mark" cssClass="errors"/></td>
                     </tr>
                     <tr>
                         <td> <label> Save </label></td>

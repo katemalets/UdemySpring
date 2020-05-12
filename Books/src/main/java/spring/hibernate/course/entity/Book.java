@@ -20,6 +20,9 @@ public class Book {
     @Column(name = "year")
     private int year;
 
+    @Column(name = "mark")
+    private int mark;
+
     public Book(){
 
     }
@@ -48,6 +51,14 @@ public class Book {
         this.author = author;
     }
 
+    public int getMark() {
+        return mark;
+    }
+
+    public void setMark(int mark) {
+        this.mark = mark;
+    }
+
     public int getYear() {
         return year;
     }
@@ -63,6 +74,7 @@ public class Book {
                 ", name='" + name + '\'' +
                 ", author='" + author + '\'' +
                 ", year=" + year +
+                ", mark=" + mark +
                 '}';
     }
 }

@@ -62,7 +62,7 @@
 
 
         #wrapper {width: 100%; margin-top: 0px; }
-        #header {width: 70%; background: #ff2400; margin-top: 0px; padding:15px 0px 15px 15px;}
+        #header {width: 70%; background: #808080; margin-top: 0px; padding:15px 0px 15px 15px;}
         #header h2 {width: 100%; margin:auto; color: #FFFFFF;}
         #container {width: 100%; margin:auto}
         #container h3 {color: #000;}
@@ -108,6 +108,10 @@
                     <tr>
                         <td><label>Year : </label></td>
                         <td><form:input path="year"/></td>
+                    </tr>
+                    <tr>
+                        <td><label>Mark : </label></td>
+                        <td><form:input path="mark"/></td>
                     </tr>
                     <tr>
                         <td> <label> Save </label></td>

@@ -12,4 +12,14 @@ public interface IBookService {
     Book getBook(int id);
 
     void deleteBook(int id);
+
+    List<Book> sortByYear();
+
+    List<Book> sortById();
+
+    List<Book> sortByYearDesc();
+
+    List<Book> sortByMark();
+
+    List<Book> sortByMarkBest();
 }

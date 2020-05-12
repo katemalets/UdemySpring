@@ -44,4 +44,39 @@ public class BookDAO implements IBookDAO{
         query.setParameter("bookId",id);
         query.executeUpdate();
     }
+
+    @Override
+    public List<Book> sortByYear() {
+        Session session = sessionFactory.getCurrentSession();
+        Query<Book> query = session.createQuery("from Book order by year");
+        return query.getResultList();
+    }
+
+    @Override
+    public List<Book> sortByYearDesc() {
+        Session session = sessionFactory.getCurrentSession();
+        Query<Book> query = session.createQuery("from Book order by year desc ");
+        return query.getResultList();
+    }
+
+    @Override
+    public List<Book> sortByMark() {
+        Session session = sessionFactory.getCurrentSession();
+        Query<Book> query = session.createQuery("from Book order by mark desc");
+        return query.getResultList();
+    }
+
+    @Override
+    public List<Book> sortByMarkBest() {
+        Session session = sessionFactory.getCurrentSession();
+        Query<Book> query = session.createQuery("from Book where mark>=8");
+        return query.getResultList();
+    }
+
+    @Override
+    public List<Book> sortById() {
+        Session session = sessionFactory.getCurrentSession();
+        Query<Book> query = session.createQuery("from Book order by id");
+        return query.getResultList();
+    }
 }

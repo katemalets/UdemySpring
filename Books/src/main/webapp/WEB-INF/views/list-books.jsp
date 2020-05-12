@@ -37,7 +37,7 @@
             tr:nth-child(odd) {background: #ffff85}
 
             #wrapper {width: 100%; margin-top: 0px; }
-            #header {width: 70%; background: #ff2400; margin-top: 0px; padding:15px 0px 15px 15px;}
+            #header {width: 70%; background: #808080; margin-top: 0px; padding:15px 0px 15px 15px;}
             #header h2 {width: 100%; margin:auto; color: #FFFFFF;}
             #container {width: 100%; margin:auto}
             #container h3 {color: #000;}
@@ -68,11 +68,28 @@
      <br>
      <input type="button" value="Add Book"
      onclick="window.location.href='showFormForAdd'; return false " class="add-button"/>
-        <table>
+
+     <input type="button" value="Sort by id"
+            onclick="window.location.href='sortById'; return false " class="add-button"/>
+
+     <input type="button" value="Sort by year"
+            onclick="window.location.href='sortByYear'; return false " class="add-button"/>
+
+     <input type="button" value="Novelties"
+            onclick="window.location.href='sortByYearDesc'; return false " class="add-button"/>
+
+     <input type="button" value="Sort by mark"
+            onclick="window.location.href='sortByMark'; return false " class="add-button"/>
+
+     <input type="button" value="Best marks"
+            onclick="window.location.href='sortByMarkBest'; return false " class="add-button"/>
+
+     <table>
             <tr>
                 <th>Name </th>
                 <th>Author </th>
                 <th>Year </th>
+                <th>Mark </th>
                 <th>Action </th>
             </tr>
 
@@ -87,6 +104,7 @@
                     <td>${book.name}</td>
                     <td>${book.author}</td>
                     <td>${book.year}</td>
+                    <td>${book.mark}</td>
                     <td><a href="${updateLink}">Update</a>
                         |
                     <a href="${deleteLink}"

@@ -37,4 +37,34 @@ public class BookService implements IBookService {
     public void deleteBook(int id) {
         iBookDAO.deleteBook(id);
     }
+
+    @Override
+    @Transactional
+    public List<Book> sortByYear() {
+        return iBookDAO.sortByYear();
+    }
+
+    @Override
+    @Transactional
+    public List<Book> sortByYearDesc() {
+        return iBookDAO.sortByYearDesc();
+    }
+
+    @Override
+    @Transactional
+    public List<Book> sortByMark() {
+        return iBookDAO.sortByMark();
+    }
+
+    @Override
+    @Transactional
+    public List<Book> sortByMarkBest() {
+        return iBookDAO.sortByMarkBest();
+    }
+
+    @Override
+    @Transactional
+    public List<Book> sortById() {
+        return iBookDAO.sortById();
+    }
 }

@@ -116,6 +116,12 @@
       <artifactId>taglibs-standard-impl</artifactId>
       <version>1.2.5</version>
     </dependency>
+
+    <dependency>
+      <groupId>org.hibernate.validator</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>6.1.4.Final</version>
+    </dependency>
   </dependencies>
 
   <build>

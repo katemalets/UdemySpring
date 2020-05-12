@@ -1,6 +1,7 @@
 package spring.hibernate.course.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 
 @Entity
 @Table(name = "book")
@@ -12,15 +13,19 @@ public class Book {
     private int id;
 
     @Column(name = "name")
+    @NotBlank(message = "you have to fill it in, guy!")
     private String name;
 
     @Column(name = "author")
+    @NotBlank(message = "you have to fill it in, guy!")
     private String author;
 
     @Column(name = "year")
     private int year;
 
     @Column(name = "mark")
+    @Min(value = 0, message = "this mark has to be more than 0")
+    @Max(value = 10, message = "this mark has to be less than 10")
     private int mark;
 
     public Book(){

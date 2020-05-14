@@ -109,7 +109,8 @@
                     </tr>
                     <tr>
                         <td><label>Year : </label></td>
-                        <td><form:input path="year"/></td>
+                        <td><form:input path="year"/>
+                            <form:errors path="year" cssClass="errors"/></td>
                     </tr>
                     <tr>
                         <td><label>Mark : </label></td>

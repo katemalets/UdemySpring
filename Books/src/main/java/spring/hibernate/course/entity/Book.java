@@ -21,6 +21,7 @@ public class Book {
     private String author;
 
     @Column(name = "year")
+    @PositiveOrZero(message = "year can't be negative,smth went wrong")
     private int year;
 
     @Column(name = "mark")

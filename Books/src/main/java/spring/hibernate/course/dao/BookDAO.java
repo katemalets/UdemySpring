@@ -74,6 +74,20 @@ public class BookDAO implements IBookDAO{
     }
 
     @Override
+    public List<Book> sortByAuthor() {
+        Session session = sessionFactory.getCurrentSession();
+        Query<Book> query = session.createQuery("from Book order by name");
+        return query.getResultList();
+    }
+
+    @Override
+    public List<Book> sortByName() {
+        Session session = sessionFactory.getCurrentSession();
+        Query<Book> query = session.createQuery("from Book order by author");
+        return query.getResultList();
+    }
+
+    @Override
     public List<Book> sortById() {
         Session session = sessionFactory.getCurrentSession();
         Query<Book> query = session.createQuery("from Book order by id");

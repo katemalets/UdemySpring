@@ -64,6 +64,18 @@ public class BookService implements IBookService {
 
     @Override
     @Transactional
+    public List<Book> sortByAuthor() {
+        return iBookDAO.sortByAuthor();
+    }
+
+    @Override
+    @Transactional
+    public List<Book> sortByName() {
+        return iBookDAO.sortByName();
+    }
+
+    @Override
+    @Transactional
     public List<Book> sortById() {
         return iBookDAO.sortById();
     }

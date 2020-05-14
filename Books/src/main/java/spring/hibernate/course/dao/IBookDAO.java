@@ -22,4 +22,8 @@ public interface IBookDAO {
     List<Book> sortByMark();
 
     List<Book> sortByMarkBest();
+
+    List<Book> sortByAuthor();
+
+    List<Book> sortByName();
 }

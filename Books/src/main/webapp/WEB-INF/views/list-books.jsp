@@ -84,6 +84,13 @@
      <input type="button" value="Best marks"
             onclick="window.location.href='sortByMarkBest'; return false " class="add-button"/>
 
+     <input type="button" value="Sort by name"
+            onclick="window.location.href='sortByName'; return false " class="add-button"/>
+
+     <input type="button" value="Sort by author"
+            onclick="window.location.href='sortByAuthor'; return false " class="add-button"/>
+
+
      <table>
             <tr>
                 <th>Name </th>

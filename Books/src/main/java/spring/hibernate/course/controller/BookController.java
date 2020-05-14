@@ -90,6 +90,20 @@ public class BookController {
         model.addAttribute("books", books);
         return "list-books";
     }
+
+    @GetMapping("/sortByName")
+    public String sortByName(Model model){
+        List<Book> books = iBookService.sortByName();
+        model.addAttribute("books", books);
+        return "list-books";
+    }
+
+    @GetMapping("/sortByAuthor")
+    public String sortByAuthor(Model model){
+        List<Book> books = iBookService.sortByAuthor();
+        model.addAttribute("books", books);
+        return "list-books";
+    }
 }
 
 

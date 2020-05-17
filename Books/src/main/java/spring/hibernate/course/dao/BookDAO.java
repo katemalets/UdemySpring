@@ -69,7 +69,7 @@ public class BookDAO implements IBookDAO{
     @Override
     public List<Book> sortByMarkBest() {
         Session session = sessionFactory.getCurrentSession();
-        Query<Book> query = session.createQuery("from Book where mark>=8");
+        Query<Book> query = session.createQuery("from Book where mark>=7");
         return query.getResultList();
     }
 

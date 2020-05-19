@@ -33,16 +33,15 @@ public class BookDAO implements IBookDAO{
     @Override
     public Book getBook(int id) {
         Session session = sessionFactory.getCurrentSession();
-        Book book = session.get(Book.class, id);
-        return book;
+        return session.get(Book.class, id);
     }
 
     @Override
     public void deleteBook(int id) {
         Session session = sessionFactory.getCurrentSession();
         Query query = session.createQuery("delete from Book where id=:bookId");
-        query.setParameter("bookId",id);
-        query.executeUpdate();
+        query.setParameter("bookId",id).executeUpdate();
+       // query.executeUpdate();
     }
 
     @Override

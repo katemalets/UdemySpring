@@ -1,4 +1,4 @@
-package spring.course.java;
+package spring.course.java.demo;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -12,7 +12,8 @@ public class MainDemoApp {
                 new AnnotationConfigApplicationContext(SpringConfig.class);
         AccountDAO accountDAO = context.getBean("accountDAO", AccountDAO.class);
         MembershipDAO membershipDAO = context.getBean("membershipDAO", MembershipDAO.class);
-        accountDAO.addAccount();
+        Account account = new Account();
+        accountDAO.addAccount(account, true);
         membershipDAO.addSillyMember();
         context.close();
     }

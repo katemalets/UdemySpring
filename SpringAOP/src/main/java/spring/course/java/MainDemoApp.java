@@ -11,6 +11,8 @@ public class MainDemoApp {
                 new AnnotationConfigApplicationContext(SpringConfig.class);
         AccountDAO accountDAO = context.getBean("accountDAO", AccountDAO.class);
         accountDAO.addAccount();
+        System.out.println("one more time");
+        accountDAO.addAccount();
         context.close();
     }
 }

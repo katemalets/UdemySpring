@@ -15,6 +15,10 @@ public class MainDemoApp {
         Account account = new Account();
         accountDAO.addAccount(account, true);
         accountDAO.doWork();
+        accountDAO.setName("Katya");
+        String name =  accountDAO.getName();
+        accountDAO.setNick("Kitty");
+        String nick =  accountDAO.getNick();
         membershipDAO.addSillyMember();
         membershipDAO.weakUp();
         context.close();

@@ -3,9 +3,9 @@ package spring.course.java.dao;
 import org.springframework.stereotype.Component;
 
 @Component
-public class AccountDAO {
+public class MembershipDAO {
 
     public void addAccount(){
-        System.out.println("Adding + " + getClass() + " + ADD ACCOUNT");
+        System.out.println(getClass() + "adding MEMBERSHIP");
     }
 }

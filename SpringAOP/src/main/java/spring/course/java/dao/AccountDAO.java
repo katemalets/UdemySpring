@@ -9,4 +9,8 @@ public class AccountDAO {
     public void addAccount(Account account, boolean vipPerson){
         System.out.println("Adding + " + getClass() + " + ADD ACCOUNT");
     }
+
+    public void doWork(){
+        System.out.println("I have to do work ehhh((");
+    }
 }

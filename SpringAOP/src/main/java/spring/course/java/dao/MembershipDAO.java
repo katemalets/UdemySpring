@@ -9,4 +9,8 @@ public class MembershipDAO {
         System.out.println(getClass() + "adding MEMBERSHIP");
         return true;
     }
+
+    public void weakUp(){
+        System.out.println("I am weaking up ");
+    }
 }

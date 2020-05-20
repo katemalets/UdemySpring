@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class LoggingAspect {
 
-    @Before("execution(* add*(spring.course.java.demo.Account, ..))")
+    @Before("execution(* spring.course.java.dao.*.*(..))")
     public void beforeAddAccount(){
         System.out.println("BEFORE annotation works");
     }

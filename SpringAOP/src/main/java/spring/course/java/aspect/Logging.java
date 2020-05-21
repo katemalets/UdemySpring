@@ -1,10 +1,7 @@
 package spring.course.java.aspect;
 
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.AfterThrowing;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.*;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
@@ -16,6 +13,11 @@ import java.util.List;
 @Component
 @Order(3)
 public class Logging {
+
+    @After("execution(* spring.course.java.dao.AccountDAO.findAccounts(..))")
+    public void after(JoinPoint joinPoint){
+        System.out.println("---after: " + joinPoint.getSignature().toShortString());
+    }
 
     @AfterThrowing(pointcut = "execution(* spring.course.java.dao.AccountDAO.findAccounts(..))",
     throwing = "myExc")

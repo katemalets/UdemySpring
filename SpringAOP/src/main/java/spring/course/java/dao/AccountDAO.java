@@ -13,6 +13,23 @@ public class AccountDAO {
 
     private String nick;
 
+    public List<Account> findAccounts(boolean flag){
+
+        if(flag){
+            throw new RuntimeException("ooops, mistake");
+        }
+
+        List<Account> accounts = new ArrayList<>();
+        Account account1 = new Account("Masha","Rasteryasha");
+        Account account2 = new Account("Dima","Gav");
+        Account account3 = new Account("Ksucha","Ksu");
+
+        accounts.add(account1);
+        accounts.add(account2);
+        accounts.add(account3);
+        return accounts;
+    }
+
     public List<Account> findAccounts(){
 
         List<Account> accounts = new ArrayList<>();

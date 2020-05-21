@@ -1,6 +1,7 @@
 package spring.course.java.aspect;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.core.annotation.Order;
@@ -14,6 +15,16 @@ import java.util.List;
 @Order(3)
 public class Logging {
 
+    @Around("execution(* spring.course.java.service.*.getFortune(..))")
+    public Object around(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+        System.out.println("---around: " + proceedingJoinPoint.getSignature().toShortString());
+        long begin = System.currentTimeMillis();
+        Object result = proceedingJoinPoint.proceed();
+        long end = System.currentTimeMillis();
+        System.out.println("Destination: " + (end - begin)/1000 + " seconds");
+        return result;
+    }
+
     @After("execution(* spring.course.java.dao.AccountDAO.findAccounts(..))")
     public void after(JoinPoint joinPoint){
         System.out.println("---after: " + joinPoint.getSignature().toShortString());
@@ -22,7 +33,7 @@ public class Logging {
     @AfterThrowing(pointcut = "execution(* spring.course.java.dao.AccountDAO.findAccounts(..))",
     throwing = "myExc")
     public void afterThrowing(JoinPoint joinPoint,Throwable myExc){
-        System.out.println("---method: " + joinPoint.getSignature().toShortString());
+        System.out.println("---afterThrowing: " + joinPoint.getSignature().toShortString());
         System.out.println("---Exception: " + myExc);
     }
 

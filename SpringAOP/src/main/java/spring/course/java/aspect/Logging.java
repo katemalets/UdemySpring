@@ -1,6 +1,7 @@
 package spring.course.java.aspect;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.reflect.MethodSignature;
@@ -8,10 +9,19 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import spring.course.java.demo.Account;
 
+import java.util.List;
+
 @Aspect
 @Component
-@Order(2)
+@Order(3)
 public class Logging {
+
+    @AfterReturning(pointcut = "execution(* spring.course.java.dao.AccountDAO.findAccounts(..))",
+            returning = "result")
+    public void afterLog(JoinPoint joinPoint, List<Account> result){
+        System.out.println("---method: " + joinPoint.getSignature().toShortString());
+        System.out.println("---result: " + result);
+    }
 
     @Before("spring.course.java.aspect.Expressions.noSetterGetter()")
     public void doLog(JoinPoint joinPoint){
@@ -24,9 +34,10 @@ public class Logging {
             System.out.println(arg);
             if(arg instanceof Account){
                 Account account = (Account) arg;
-                System.out.println("Name: " + ((Account) arg).getName());
-                System.out.println("Level: " + ((Account) arg).getNick());
+                System.out.println("Name: " + account.getName());
+                System.out.println("Level: " + account.getNick());
             }
         }
     }
+
 }

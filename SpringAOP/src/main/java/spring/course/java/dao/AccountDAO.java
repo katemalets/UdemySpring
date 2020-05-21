@@ -3,12 +3,28 @@ package spring.course.java.dao;
 import org.springframework.stereotype.Component;
 import spring.course.java.demo.Account;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class AccountDAO {
 
     private String name;
 
     private String nick;
+
+    public List<Account> findAccounts(){
+
+        List<Account> accounts = new ArrayList<>();
+        Account account1 = new Account("Masha","Rasteryasha");
+        Account account2 = new Account("Dima","Gav");
+        Account account3 = new Account("Ksucha","Ksu");
+
+        accounts.add(account1);
+        accounts.add(account2);
+        accounts.add(account3);
+        return accounts;
+    }
 
     public void addAccount(Account account, boolean vipPerson){
         System.out.println("Adding + " + getClass() + " + ADD ACCOUNT");

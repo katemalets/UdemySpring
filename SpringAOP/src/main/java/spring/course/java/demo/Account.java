@@ -3,7 +3,7 @@ package spring.course.java.demo;
 public class Account {
 
     String name;
-    String level;
+    String nick;
 
     public String getName() {
         return name;
@@ -13,11 +13,11 @@ public class Account {
         this.name = name;
     }
 
-    public String getLevel() {
-        return level;
+    public String getNick() {
+        return nick;
     }
 
-    public void setLevel(String level) {
-        this.level = level;
+    public void setNick(String nick) {
+        this.nick = nick;
     }
 }

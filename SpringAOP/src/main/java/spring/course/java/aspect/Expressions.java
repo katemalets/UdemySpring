@@ -3,31 +3,25 @@ package spring.course.java.aspect;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
-import org.springframework.stereotype.Component;
 
 @Aspect
-@Component
-public class LoggingAspect {
+public class Expressions {
 
     @Pointcut("execution(* spring.course.java.dao.*.*(..))")
-    private void daoPackage(){}
+    public void daoPackage(){}
 
     @Pointcut("execution(* spring.course.java.dao.*.get*(..))")
-    private void getter(){}
+    public void getter(){}
 
     @Pointcut("execution(* spring.course.java.dao.*.set*(..))")
-    private void setter(){}
+    public void setter(){}
 
     @Pointcut("daoPackage() && !(getter() || setter())")
-    private void noSetterGetter(){}
+    public void noSetterGetter(){}
 
     @Before("noSetterGetter()")
-    public void beforeAddAccount(){
-        System.out.println("BEFORE annotation works");
+    public void securitySettings(){
+        System.out.println("----------safe");
     }
 
-    @Before("noSetterGetter()")
-    public void doAnalyse(){
-        System.out.println("//hrr///I am analysing//hrr//");
-    }
 }

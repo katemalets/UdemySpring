@@ -21,6 +21,15 @@ public class Logging {
     public void afterLog(JoinPoint joinPoint, List<Account> result){
         System.out.println("---method: " + joinPoint.getSignature().toShortString());
         System.out.println("---result: " + result);
+        convertIntoUppercase(result);
+        System.out.println("---result: " + result);
+    }
+
+    private void convertIntoUppercase(List<Account> result){
+        for(Account account: result){
+            String name = account.getName().toUpperCase();
+            account.setName(name);
+        }
     }
 
     @Before("spring.course.java.aspect.Expressions.noSetterGetter()")

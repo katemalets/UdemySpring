@@ -1,6 +1,5 @@
 package spring.course.java.demo;
 
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import spring.course.java.config.SpringConfig;
 import spring.course.java.dao.AccountDAO;

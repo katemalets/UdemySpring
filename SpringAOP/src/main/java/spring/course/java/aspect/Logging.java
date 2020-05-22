@@ -24,7 +24,7 @@ public class Logging {
             result = proceedingJoinPoint.proceed();
         } catch (Exception exc) {
             System.out.println("---mistake is caught");
-            result = "AOP corrected your mistake, yeeep";
+            throw exc;
         }
         long end = System.currentTimeMillis();
         System.out.println("Destination: " + (end - begin)/1000 + " seconds");

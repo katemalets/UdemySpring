@@ -91,7 +91,8 @@
                     <td><a href="${updateLink}">Update</a>
                     |
                     <a href="${deleteLink}"
-                    onclick="if (!(confirm('Are you sure? Do you want to delete the customer?'))) return false">Delete</a></td>
+                    onclick="if (!(confirm('Are you sure? Do you want to delete the customer?'))) return false">
+                        Delete</a></td>
                 </tr>
                 </c:forEach>
         </table>

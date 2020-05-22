@@ -12,7 +12,6 @@ import spring.hibernate.course.entity.Customer;
 @Service
 public class CustomerService implements ICustomerService {
 
-	// need to inject customer dao
 	@Autowired
 	private ICustomerDAO iCustomerDAO;
 	

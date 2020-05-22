@@ -1,5 +1,6 @@
 package spring.hibernate.course.controllers;
 
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 import spring.hibernate.course.entity.Customer;
 import org.springframework.beans.factory.annotation.Autowired;

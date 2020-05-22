@@ -14,4 +14,11 @@ public class FortuneService {
         }
         return "Today is a good traffic";
     }
+
+    public String getFortune(boolean flag) {
+        if(flag){
+            throw new RuntimeException("Mistake somewhere here");
+        }
+        return getFortune();
+    }
 }

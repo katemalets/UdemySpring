@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <html>
     <head>
         <title>Home Page</title>
@@ -15,8 +15,16 @@
         <body>
             <h3> <i> My first security app </i> </h3>
             <hr>
+            Username: <security:authentication property="principal.username"/>
+            <br>
+            Role's: <security:authentication property="principal.authorities"/>
+            <hr>
                 <p>Hi, my sweet home c:<br>
                 I am missing ...</p>
+            <hr>
+            <p><a href="${pageContext.request.contextPath}/leaders"> very secret info </a>
+                (Only for managers)
+            </p>
                     <form:form action="${pageContext.request.contextPath}/logout" method="POST">
                         <input type="submit" value="Logout"/>
                     </form:form>

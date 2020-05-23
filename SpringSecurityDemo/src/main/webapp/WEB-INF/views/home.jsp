@@ -8,10 +8,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Home</title>
+    <title>Home Page</title>
 </head>
 <body>
-Hi, my sweet home c:
-I am missing ...
+<h3> <i> My first security app </i> </h3>
+<hr>
+<p>Hi, my sweet home c:<br>
+I am missing ...</p>
 </body>
 </html>

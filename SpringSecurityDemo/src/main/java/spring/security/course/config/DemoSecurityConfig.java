@@ -2,6 +2,7 @@ package spring.security.course.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.User;
@@ -17,6 +18,17 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
        auth.inMemoryAuthentication()
                .withUser(users.username("katya").password("katya").roles("EMPLOYEE"))
                .withUser(users.username("dima").password("dima").roles("MANAGER"))
-               .withUser(users.username("Masha").password("masha").roles("ADMIN"));
+               .withUser(users.username("masha").password("masha").roles("ADMIN"));
+    }
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.authorizeRequests()
+                .anyRequest().authenticated()
+                .and()
+                .formLogin()
+                    .loginPage("/showLoginPage")
+                    .loginProcessingUrl("/authenticateTheUser")
+                    .permitAll();
     }
 }

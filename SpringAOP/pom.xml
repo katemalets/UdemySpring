@@ -55,8 +55,22 @@
       <artifactId>aspectjweaver</artifactId>
       <version>1.9.5</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/com.atlassian.mail/atlassian-mail -->
+    <dependency>
+      <groupId>com.atlassian.mail</groupId>
+      <artifactId>atlassian-mail</artifactId>
+      <version>5.0.0</version>
+    </dependency>
 
   </dependencies>
+
+  <repositories>
+    <repository>
+    <id>Atlassian</id>
+    <name>atlassian repo</name>
+    <url>https://packages.atlassian.com/maven-public/</url>
+    </repository>
+  </repositories>
 
   <build>
     <finalName>Coach</finalName>

@@ -10,10 +10,10 @@
 <head>
     <title>HMMM A PROBLEM</title>
 </head>
-<body>
-    <h3>Hi, are you sure? Do you have rights to be here?</h3>
-    <hr>
-    <h4><i>May be it is a mistake, who knows...</i></h4>
-    <a href="${pageContext.request.contextPath}/">Home</a>
-</body>
+    <body>
+        <h3>Hi, are you sure? Do you have rights to be here?</h3>
+        <hr>
+        <h4><i>May be it is a mistake, who knows...</i></h4>
+        <a href="${pageContext.request.contextPath}/">Home</a>
+    </body>
 </html>

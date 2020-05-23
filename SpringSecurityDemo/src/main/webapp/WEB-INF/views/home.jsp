@@ -20,14 +20,18 @@
             Role's: <security:authentication property="principal.authorities"/>
             <hr>
                 <p>Hi, my sweet home c:<br>
-                I am missing ...</p>
-            <hr>
+                </p>
+            <security:authorize access="hasRole('MANAGER')">
             <p><a href="${pageContext.request.contextPath}/leaders"> very secret info </a>
                 (Only for managers)
             </p>
+            </security:authorize>
+            <security:authorize access="hasRole('ADMIN')">
             <p><a href="${pageContext.request.contextPath}/systems"> very secret info </a>
                 (Only for admins)
             </p>
+                <hr>
+            </security:authorize>
                     <form:form action="${pageContext.request.contextPath}/logout" method="POST">
                         <input type="submit" value="Logout"/>
                     </form:form>

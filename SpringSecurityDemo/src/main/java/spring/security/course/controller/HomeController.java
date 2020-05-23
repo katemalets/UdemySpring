@@ -15,4 +15,9 @@ public class HomeController {
     public String leadersPage(){
         return "leaders";
     }
+
+    @GetMapping("/systems")
+    public String systemsPage(){
+        return "systems";
+    }
 }

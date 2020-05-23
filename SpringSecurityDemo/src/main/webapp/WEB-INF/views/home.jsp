@@ -25,6 +25,9 @@
             <p><a href="${pageContext.request.contextPath}/leaders"> very secret info </a>
                 (Only for managers)
             </p>
+            <p><a href="${pageContext.request.contextPath}/systems"> very secret info </a>
+                (Only for admins)
+            </p>
                     <form:form action="${pageContext.request.contextPath}/logout" method="POST">
                         <input type="submit" value="Logout"/>
                     </form:form>

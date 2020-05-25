@@ -1,0 +1,13 @@
+{
+  "id" : 14,
+  "firstname" : "Katya",
+  "lastname" : "Malets",
+  "active" : true,
+  "adress" : {
+        "street" : "Logoisk",
+        "city" : "Minsk",
+        "zip" : "220090",
+        "country" : "Belarus"
+      },
+  "languages" : ["Java", "C#", "C++", "Python"]
+}

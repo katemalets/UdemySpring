@@ -7,7 +7,8 @@
         "street" : "Logoisk",
         "city" : "Minsk",
         "zip" : "220090",
-        "country" : "Belarus"
+        "country" : "Belarus",
+        "index" : "qwerty"
       },
   "languages" : ["Java", "C#", "C++", "Python"]
 }

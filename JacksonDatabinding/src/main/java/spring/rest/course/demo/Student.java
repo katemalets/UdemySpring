@@ -10,6 +10,30 @@ public class Student {
 
     private boolean active;
 
+    private Adress adress;
+
+    private String[] languages;
+
+    public String[] getLanguages() {
+        return languages;
+    }
+
+    public void setLanguages(String[] languages) {
+        this.languages = languages;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    public Adress getAdress() {
+        return adress;
+    }
+
+    public void setAdress(Adress adress) {
+        this.adress = adress;
+    }
+
     public Student(){
 
     }
@@ -42,7 +66,4 @@ public class Student {
         return active;
     }
 
-    public void setAtive(boolean ative) {
-        this.active = active;
-    }
 }

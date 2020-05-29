@@ -40,4 +40,14 @@ public class DemoRestController {
         customerService.saveCustomer(customer);
         return customer;
     }
+
+    @DeleteMapping("/customers/{studentId}")
+    public String deleteCustomer(@PathVariable int studentId){
+        Customer customer = customerService.getCustomer(studentId);
+        if(customer == null){
+            throw new CustomerNotFound("Customer id #" + studentId + " is not found");
+        }
+        customerService.deleteCustomer(studentId);
+        return "Customer id #" + studentId + " is deleted";
+    }
 }

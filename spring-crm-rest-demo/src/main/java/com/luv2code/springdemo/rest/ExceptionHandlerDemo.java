@@ -10,7 +10,7 @@ public class ExceptionHandlerDemo {
 
     @ExceptionHandler
     public ResponseEntity<CustomerEntityResponse> handleException(CustomerNotFound exc){
-        CustomerEntityResponse error = new CustomerEntityResponse(HttpStatus.NOT_FOUND.value(),exc.getMessage(),
+        CustomerEntityResponse error = new CustomerEntityResponse(HttpStatus.NOT_FOUND.value(), exc.getMessage(),
                                                                 System.currentTimeMillis());
         return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
     }

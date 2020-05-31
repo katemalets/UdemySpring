@@ -1,6 +1,5 @@
 package spring.boot.course.springbootcrud.dao;
 
-import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import spring.boot.course.springbootcrud.entity.Employee;

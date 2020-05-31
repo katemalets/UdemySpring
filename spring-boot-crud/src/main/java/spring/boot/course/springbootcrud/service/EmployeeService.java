@@ -1,6 +1,7 @@
 package spring.boot.course.springbootcrud.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import spring.boot.course.springbootcrud.dao.IEmployeeDAO;
@@ -14,7 +15,7 @@ public class EmployeeService implements IEmployeeService {
     private IEmployeeDAO iEmployeeDAO;
 
     @Autowired
-    public EmployeeService(IEmployeeDAO iEmployeeDAO) {
+    public EmployeeService(@Qualifier("employeeDAOJPA") IEmployeeDAO iEmployeeDAO) {
         this.iEmployeeDAO = iEmployeeDAO;
     }
 

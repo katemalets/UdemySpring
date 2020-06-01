@@ -1,15 +1,19 @@
 package thymeleaf.spring.boot.thymeleafdemo.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import thymeleaf.spring.boot.thymeleafdemo.entity.Employee;
+import thymeleaf.spring.boot.thymeleafdemo.service.IEmployeeService;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 
 @Controller
+@RequestMapping("/employees")
 public class DemoController {
 
     @GetMapping("/hello")
@@ -18,23 +22,17 @@ public class DemoController {
         return "helloworld";
     }
 
-    private List<Employee> employees;
+    private IEmployeeService iEmployeeService;
 
-    @PostConstruct
-    public void loadData() {
-        Employee employee1 = new Employee(1, "Katya", "Malets", "katya@mail");
-        Employee employee2 = new Employee(2, "Ksu", "Gavrilova", "ksu@mail");
-        Employee employee3 = new Employee(3, "Dima", "Fedchenko", "dima@icloud");
-
-        employees = new ArrayList<>();
-        employees.add(employee1);
-        employees.add(employee2);
-        employees.add(employee3);
+    @Autowired
+    public DemoController(IEmployeeService iEmployeeService) {
+        this.iEmployeeService = iEmployeeService;
     }
 
-    @GetMapping("/employee")
+    @GetMapping("/list")
     public String listEmployee(Model model){
+        List<Employee> employees = iEmployeeService.findAll();
         model.addAttribute("employees", employees);
-        return "list-employees";
+        return "employees/list-employees";
     }
 }

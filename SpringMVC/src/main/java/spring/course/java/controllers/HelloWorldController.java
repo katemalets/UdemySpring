@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 public class HelloWorldController {
 
     @GetMapping("showForm")
-    public String showForm(){
+    public String showForm() {
         return "showform";
     }
 

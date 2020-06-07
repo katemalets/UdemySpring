@@ -18,14 +18,14 @@ public class Game {
     private String description;
 
     @Column(name = "year")
-    private int year;
+    private String year;
 
     @Column(name = "creator")
     private String creator;
 
     public Game(){}
 
-    public Game(String name, String description, int year, String creator){
+    public Game(String name, String description, String year, String creator){
         this.name = name;
         this.description = description;
         this.year = year;
@@ -56,11 +56,11 @@ public class Game {
         this.description = description;
     }
 
-    public int getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(int year) {
+    public void setYear(String year) {
         this.year = year;
     }
 

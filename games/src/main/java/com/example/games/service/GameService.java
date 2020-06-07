@@ -16,4 +16,19 @@ public class GameService implements IGameService {
     public List<Game> getGames() {
         return iGameDAO.getGames();
     }
+
+    @Override
+    public void save(Game game) {
+        iGameDAO.save(game);
+    }
+
+    @Override
+    public void delete(int id) {
+        iGameDAO.delete(id);
+    }
+
+    @Override
+    public Game showFormForUpdate(int id) {
+        return iGameDAO.showFormForUpdate(id);
+    }
 }

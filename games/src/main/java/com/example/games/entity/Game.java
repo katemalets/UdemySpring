@@ -17,10 +17,18 @@ public class Game {
     @Column(name = "description")
     private String description;
 
+    @Column(name = "year")
+    private int year;
+
+    @Column(name = "creator")
+    private String creator;
+
     public Game(){}
 
-    public Game(String name, String description){
+    public Game(String name, String description, int year, String creator){
         this.name = name;
+        this.description = description;
+        this.year = year;
         this.description = description;
     }
 
@@ -48,12 +56,30 @@ public class Game {
         this.description = description;
     }
 
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public String getCreator() {
+        return creator;
+    }
+
+    public void setCreator(String creator) {
+        this.creator = creator;
+    }
+
     @Override
     public String toString() {
         return "Game{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
+                ", year=" + year +
+                ", creator='" + creator + '\'' +
                 '}';
     }
 }

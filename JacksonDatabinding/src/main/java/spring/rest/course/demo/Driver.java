@@ -1,13 +1,8 @@
 package spring.rest.course.demo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.io.File;
-import java.io.Reader;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.Arrays;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -17,7 +12,7 @@ public class Driver {
         ObjectMapper mapper = new ObjectMapper();
         try{
 
-            Student student = mapper.readValue(new File("data/sample-full.json"),Student.class);
+            Student student = mapper.readValue(new File("data/sample-full.json"), Student.class);
             System.out.println("First name : " + student.getFirstname());
             System.out.println("Last name : " + student.getLastname());
             System.out.println("City: " + student.getAdress().getCity());

@@ -22,5 +22,4 @@
         <property name="email" value="${prop.email}"/>
         <property name="team" value="${prop.team}"/>
     </bean>
-
 </beans>
